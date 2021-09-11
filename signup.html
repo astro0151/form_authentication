@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>signup</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <form class="col-2 mx-auto my-5" onclick="return false">
+      <h2 class="row justify-content-center">Register</h2>
+      <p class="form-text">Fill required field</p>
+      <div>
+        <label for="username" class="form-label">username</label>
+        <input
+          type="text"
+          id="username"
+          class="form-control"
+          placeholder="Enter username"
+        />
+      </div>
+      <div id="username_error" class="form-text" style="color: red"></div>
+      <div>
+        <label for="email" class="form-label">Email id</label>
+        <input
+          type="email"
+          id="email"
+          class="form-control"
+          placeholder="Enter email address"
+        />
+      </div>
+      <div id="email_error" class="form-text" style="color: red"></div>
+      <div>
+        <label for="password" class="form-label">Password</label>
+        <input
+          type="password"
+          class="form-control"
+          id="password"
+          placeholder="Enter password"
+        />
+      </div>
+      <div id="password_error" class="form-text" style="color: red"></div>
+      <div>
+        <button id="submit" class="btn btn-primary form-control my-3">
+          signup
+        </button>
+        <div class="d-flex">
+          <p>already user?</p>
+          <a
+            href="../form_authentication/login.html"
+            target="_blank"
+            class="mx-1"
+            style="text-decoration: none"
+            >click here</a
+          >
+        </div>
+      </div>
+    </form>
+    <script>
+      document.getElementById("submit").addEventListener("click", () => {
+        let username = document.getElementById("username").value;
+        let email = document.getElementById("email").value;
+        let password = document.getElementById("password").value;
+        document.getElementById("username_error").innerText = "";
+        document.getElementById("email_error").innerText = "";
+        document.getElementById("password_error").innerText = "";
+        if (username == "") {
+          document.getElementById("username_error").innerText =
+            "username required";
+        } else if (email == "") {
+          document.getElementById("email_error").innerText = "email required";
+        } else if (password == "") {
+          document.getElementById("password_error").innerText =
+            "password required";
+        } else {
+          document.getElementById("submit").style.background = "green";
+        }
+      });
+    </script>
+  </body>
+</html>
